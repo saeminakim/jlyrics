@@ -5,9 +5,7 @@
     <title>J-Lyrics</title>
 </head>
 <body>
-<form th:action="/search" method="get">
-    <input type="text" name="searchKeyword">
-    <button type="submit">검색</button>
-</form>
+    <h1>Lyrics</h1>
+    <div th:text="${song}"></div>
 </body>
 </html>
