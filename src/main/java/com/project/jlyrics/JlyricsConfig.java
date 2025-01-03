@@ -1,4 +1,4 @@
-package com.project.jlyrics.config;
+package com.project.jlyrics;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

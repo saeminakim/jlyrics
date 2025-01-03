@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>J-Lyrics</title>
+</head>
+<body>
+    <h1>Lyrics</h1>
+    <table>
+        <tr th:each="song : ${songs}">
+            <td th:text="${song.artist_names}">artist_names</td>
+            <td th:text="${song.title}">title</td>
+        </tr>
+    </table>
+</body>
+</html>
