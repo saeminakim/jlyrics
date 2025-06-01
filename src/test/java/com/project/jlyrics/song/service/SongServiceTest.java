@@ -23,7 +23,7 @@ public class SongServiceTest {
         String keyword = "유키";
         ArrayList<Map<String, String>> result = searchSongsByKeyword(keyword);
 
-        if (result.size() <= 0) {
+        if (result.isEmpty()) {
             Assertions.fail();
         }
 
@@ -50,7 +50,6 @@ public class SongServiceTest {
     @Test
     @DisplayName("키워드를 입력했을 때 제한보다 길면 길이 제한만큼 잘린 검색어가 나온다")
     void checkKeywordLengthForLongKeyword () {
-        // 1. 길게 입력했을 때는 잘린 키워드 나온다 2. 짧게 입력하면 그대로 나온다 두개의 테스트 필요
         String keyword = "qwerasdfzxcvtyuiopfghjqwerasdfzxcvtyuiopfghjqwerasdfzxcvtyuiopfghj";
 
         String shortenKeyword = checkKeywordLengthAndReturnProperKeyword(keyword);
@@ -63,12 +62,11 @@ public class SongServiceTest {
     @Test
     @DisplayName("키워드를 입력했을 때 제한보다 짧으면 그대로 나온다")
     void checkKeywordLengthForShortKeyword () {
-        // 1. 길게 입력했을 때는 잘린 키워드 나온다 2. 짧게 입력하면 그대로 나온다 두개의 테스트 필요
         String keyword = "qwerasdfzx";
 
         String shortenKeyword = checkKeywordLengthAndReturnProperKeyword(keyword);
 
-        if (shortenKeyword.length() > 30) {
+        if (shortenKeyword.length() > 30 || !shortenKeyword.equals(keyword)) {
             Assertions.fail();
         }
     }
